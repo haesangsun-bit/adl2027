@@ -48,7 +48,7 @@ img{max-width:100%;display:block}
 .support-title{font-style:italic;font-size:19px;color:#5b6471;white-space:nowrap;padding-right:28px;font-family:Georgia,"Times New Roman",serif}
 .support-title:before{display:none}
 .support-item{min-width:0;min-height:88px;padding:0 26px;border-left:1px solid rgba(11,42,85,.18);display:flex;align-items:center}
-.support-item.urim img{display:block;width:270px;max-width:100%;height:auto;max-height:59px;object-fit:contain}
+.support-item.urim img{display:block;width:297px;max-width:100%;height:auto;max-height:65px;object-fit:contain}
 .support-item.rmnt{display:grid;grid-template-columns:52px minmax(0,1fr);gap:18px;align-items:center}
 .support-item.rmnt img{display:block;width:52px;max-width:52px;height:auto;object-fit:contain}
 .support-copy{font-size:14px;line-height:1.28;min-width:0;color:#2f4054;font-family:system-ui,-apple-system,"Segoe UI",Arial,sans-serif}
@@ -98,7 +98,7 @@ img{max-width:100%;display:block}
   .support-title{grid-column:1/-1;padding:0 0 8px;min-height:28px;white-space:nowrap}
   .support-item{min-height:90px;padding:0 22px}
   .support-item.urim{border-left:0;padding-left:0}
-  .support-item.urim img{width:258px;max-height:57px}
+  .support-item.urim img{width:284px;max-height:63px}
   .support-item.rmnt{grid-template-columns:50px minmax(0,1fr);gap:16px}
   .support-item.rmnt img{width:50px;max-width:50px}
   .support-item.nrf{grid-template-columns:64px minmax(0,1fr);gap:16px}
@@ -109,7 +109,7 @@ img{max-width:100%;display:block}
   .support-inner{grid-template-columns:1fr;gap:0}
   .support-title{padding:0 0 12px;white-space:nowrap}
   .support-item{border-left:0;border-top:1px solid var(--line);padding:14px 0;min-height:0}
-  .support-item.urim img{width:253px;max-width:84vw;max-height:57px}
+  .support-item.urim img{width:278px;max-width:84vw;max-height:63px}
   .support-item.rmnt{grid-template-columns:50px minmax(0,1fr);gap:16px}
   .support-item.rmnt img{width:50px;max-width:50px}
   .support-item.nrf{grid-template-columns:62px minmax(0,1fr);gap:16px}
