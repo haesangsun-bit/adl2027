@@ -67,7 +67,7 @@ img{max-width:100%;display:block}
 .title-block{margin-bottom:34px}.title-block h2{font-size:44px;font-weight:400;margin:0 0 8px;color:var(--navy)}.title-block .gold-rule{margin-bottom:18px}
 .speaker-list{border-top:1px solid var(--line)}
 .speaker-row{display:grid;grid-template-columns:minmax(220px,1fr) 1.7fr;gap:28px;padding:24px 0;border-bottom:1px solid var(--line);align-items:center}
-.speaker-name a{font-size:27px;color:#10449a;text-decoration:none;border-bottom:1px solid transparent}.speaker-name a:hover{border-bottom-color:#10449a}
+.speaker-name{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap}.speaker-name a{font-size:27px;color:#10449a;text-decoration:none;border-bottom:1px solid transparent}.speaker-name a:hover{border-bottom-color:#10449a}.speaker-status{font-family:system-ui,-apple-system,"Segoe UI",Arial,sans-serif;font-size:11px;line-height:1;letter-spacing:.04em;text-transform:uppercase;color:#8a6b24;border:1px solid rgba(138,107,36,.38);border-radius:999px;padding:4px 7px;white-space:nowrap}
 .affiliation{font-size:18px;color:#375574}
 .schedule-days{display:grid;gap:18px}
 .day-card{border:1px solid var(--line);background:#fff;box-shadow:0 8px 26px rgba(16,50,80,.04)}
