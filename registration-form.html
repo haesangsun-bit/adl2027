@@ -1,0 +1,80 @@
+<!doctype html><html lang="en" data-registration-api=""><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Registration — ADL 2027</title><link rel="stylesheet" href="styles.css"></head><body>
+<header class="site-header"><div class="nav-wrap"><a class="brand" href="index.html"><span class="gold">ADL</span> 2027</a><button class="menu-button" aria-label="Toggle menu">☰</button><nav class="nav"><a href="index.html">Home</a><a href="speakers.html">Speakers</a><a href="program.html">Program</a><a class="active" href="registration.html">Registration</a><a href="venue.html">Venue</a></nav></div></header>
+<section class="page-hero"><div class="page-hero-inner"><div class="brand-line">Arithmetic and Dynamical Aspects of L-functions</div><h1>Registration</h1></div></section>
+<main class="main registration-main">
+  <div class="title-block registration-heading">
+    <span class="status registration-status">Registration form</span>
+    <h2>ADL 2027 Registration</h2>
+    <div class="gold-rule"></div>
+    <p class="intro">Please complete the form below. No email address is collected. The information will be used only for conference organization and accommodation planning.</p>
+  </div>
+
+  <div class="registration-form-wrap">
+    <form id="registration-form" class="registration-form" novalidate>
+      <div class="form-grid">
+        <label class="form-field">
+          <span>Full name <em>*</em></span>
+          <input type="text" name="name" autocomplete="name" maxlength="120" required>
+        </label>
+
+        <label class="form-field">
+          <span>Affiliation <em>*</em></span>
+          <input type="text" name="affiliation" maxlength="180" required>
+        </label>
+
+        <label class="form-field">
+          <span>Position / title <em>*</em></span>
+          <input type="text" name="position" maxlength="120" placeholder="Professor, Postdoctoral Fellow, PhD Student, …" required>
+        </label>
+
+        <label class="form-field">
+          <span>Country / region <em>*</em></span>
+          <input type="text" name="country" autocomplete="country-name" maxlength="100" required>
+        </label>
+      </div>
+
+      <fieldset class="form-section">
+        <legend>Attendance dates <em>*</em></legend>
+        <p class="field-help">Select all days on which you expect to attend.</p>
+        <div class="checkbox-grid">
+          <label><input type="checkbox" name="attendance" value="Mon Jan 25" checked> <span>Mon, Jan 25</span></label>
+          <label><input type="checkbox" name="attendance" value="Tue Jan 26" checked> <span>Tue, Jan 26</span></label>
+          <label><input type="checkbox" name="attendance" value="Wed Jan 27" checked> <span>Wed, Jan 27</span></label>
+          <label><input type="checkbox" name="attendance" value="Thu Jan 28" checked> <span>Thu, Jan 28</span></label>
+          <label><input type="checkbox" name="attendance" value="Fri Jan 29" checked> <span>Fri, Jan 29</span></label>
+        </div>
+      </fieldset>
+
+      <fieldset class="form-section">
+        <legend>Accommodation in Gyeongju <em>*</em></legend>
+        <p class="field-help">For planning purposes only. Accommodation support, where applicable, will be confirmed separately.</p>
+        <div class="radio-row">
+          <label><input type="radio" name="accommodation" value="Yes" required> <span>Needed</span></label>
+          <label><input type="radio" name="accommodation" value="No" required> <span>Not needed</span></label>
+        </div>
+      </fieldset>
+
+      <label class="form-field form-field-full">
+        <span>Additional comments</span>
+        <textarea name="comments" rows="5" maxlength="1200" placeholder="Optional"></textarea>
+      </label>
+
+      <div class="honeypot" aria-hidden="true">
+        <label>Website <input type="text" name="website" tabindex="-1" autocomplete="off"></label>
+      </div>
+
+      <div id="registration-message" class="registration-message" role="status" aria-live="polite"></div>
+      <div class="form-actions">
+        <button id="registration-submit" class="registration-submit" type="submit">Submit registration</button>
+      </div>
+    </form>
+
+    <div id="registration-success" class="registration-success" hidden>
+      <span class="status">Registration received</span>
+      <h2>Thank you.</h2>
+      <p>Your registration for ADL 2027 has been received.</p>
+    </div>
+  </div>
+</main>
+<footer class="simple-footer"><div class="simple-footer-inner"><div class="footer-copy"><span class="footer-title">ADL 2027</span><span class="footer-detail">January 25–29, 2027 · Hilton Gyeongju</span></div><div class="footer-logo-wrap"><img class="footer-unist-logo" src="assets/unist_log.png.png" alt="Ulsan National Institute of Science and Technology"></div></div></footer>
+<script src="script.js"></script><script src="registration-form.js"></script></body></html>
