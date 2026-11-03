@@ -6,7 +6,7 @@
     <span class="status registration-status">Registration form</span>
     <h2>ADL 2027 Registration</h2>
     <div class="gold-rule"></div>
-    <p class="intro">Please complete the form below. No email address is collected. The information will be used only for conference organization and accommodation planning.</p>
+    <p class="intro">Please complete the form below. No email address is collected. The information will be used only for conference organization and event planning.</p>
   </div>
 
   <div class="registration-form-wrap">
@@ -26,11 +26,6 @@
           <span>Position / title <em>*</em></span>
           <input type="text" name="position" maxlength="120" placeholder="Professor, Postdoctoral Fellow, PhD Student, …" required>
         </label>
-
-        <label class="form-field">
-          <span>Country / region <em>*</em></span>
-          <input type="text" name="country" autocomplete="country-name" maxlength="100" required>
-        </label>
       </div>
 
       <fieldset class="form-section">
@@ -46,11 +41,22 @@
       </fieldset>
 
       <fieldset class="form-section">
-        <legend>Accommodation in Gyeongju <em>*</em></legend>
-        <p class="field-help">For planning purposes only. Accommodation support, where applicable, will be confirmed separately.</p>
-        <div class="radio-row">
-          <label><input type="radio" name="accommodation" value="Yes" required> <span>Needed</span></label>
-          <label><input type="radio" name="accommodation" value="No" required> <span>Not needed</span></label>
+        <legend>Dietary requirements <em>*</em></legend>
+        <p class="field-help">Please select the option that best applies.</p>
+        <div class="radio-row dietary-row">
+          <label><input type="radio" name="dietary" value="No restrictions" required> <span>No restrictions</span></label>
+          <label><input type="radio" name="dietary" value="Vegetarian" required> <span>Vegetarian</span></label>
+          <label><input type="radio" name="dietary" value="Vegan" required> <span>Vegan</span></label>
+          <label><input type="radio" name="dietary" value="Other" required> <span>Other</span></label>
+        </div>
+      </fieldset>
+
+      <fieldset class="form-section">
+        <legend>Conference events</legend>
+        <p class="field-help">For planning the banquet and excursion.</p>
+        <div class="checkbox-grid event-grid">
+          <label><input type="checkbox" name="events" value="Banquet"> <span>Banquet</span></label>
+          <label><input type="checkbox" name="events" value="Excursion"> <span>Excursion</span></label>
         </div>
       </fieldset>
 
