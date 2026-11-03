@@ -23,9 +23,9 @@ function doPost(e) {
         "Name",
         "Affiliation",
         "Position",
-        "Country",
         "Attendance dates",
-        "Accommodation needed",
+        "Dietary requirements",
+        "Banquet / Excursion",
         "Comments"
       ]);
       sheet.setFrozenRows(1);
@@ -36,9 +36,9 @@ function doPost(e) {
       String(data.name || ""),
       String(data.affiliation || ""),
       String(data.position || ""),
-      String(data.country || ""),
       Array.isArray(data.attendance) ? data.attendance.join(", ") : "",
-      String(data.accommodation || ""),
+      String(data.dietary || ""),
+      Array.isArray(data.events) ? data.events.join(", ") : "",
       String(data.comments || "")
     ]);
 
