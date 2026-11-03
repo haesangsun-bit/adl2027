@@ -35,9 +35,9 @@
       name: formData.get("name"),
       affiliation: formData.get("affiliation"),
       position: formData.get("position"),
-      country: formData.get("country"),
       attendance,
-      accommodation: formData.get("accommodation"),
+      dietary: formData.get("dietary"),
+      events: [...form.querySelectorAll('input[name="events"]:checked')].map((input) => input.value),
       comments: formData.get("comments"),
       website: formData.get("website")
     };
