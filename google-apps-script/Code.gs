@@ -25,7 +25,6 @@ function doPost(e) {
         "Position",
         "Attendance dates",
         "Dietary requirements",
-        "Banquet / Excursion",
         "Comments"
       ]);
       sheet.setFrozenRows(1);
@@ -38,7 +37,6 @@ function doPost(e) {
       String(data.position || ""),
       Array.isArray(data.attendance) ? data.attendance.join(", ") : "",
       String(data.dietary || ""),
-      Array.isArray(data.events) ? data.events.join(", ") : "",
       String(data.comments || "")
     ]);
 
