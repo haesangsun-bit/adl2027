@@ -69,14 +69,14 @@ module.exports = async function handler(req, res) {
   const name = clean(body.name, 120);
   const affiliation = clean(body.affiliation, 180);
   const position = clean(body.position, 120);
-  const country = clean(body.country, 100);
-  const accommodation = clean(body.accommodation, 20);
+    const dietary = clean(body.dietary, 80);
+  const events = Array.isArray(body.events) ? body.events.map((v) => clean(v, 40)).filter(Boolean).slice(0, 4) : [];
   const comments = clean(body.comments, 1200);
   const attendance = Array.isArray(body.attendance)
     ? body.attendance.map((v) => clean(v, 32)).filter(Boolean).slice(0, 5)
     : [];
 
-  if (!name || !affiliation || !position || !country || !attendance.length || !["Yes", "No"].includes(accommodation)) {
+  if (!name || !affiliation || !position || !attendance.length || !dietary) {
     return res.status(400).json({ ok: false, error: "missing_or_invalid_fields" });
   }
 
@@ -86,9 +86,9 @@ module.exports = async function handler(req, res) {
     name,
     affiliation,
     position,
-    country,
     attendance,
-    accommodation,
+    dietary,
+    events,
     comments
   };
 
