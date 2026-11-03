@@ -70,7 +70,6 @@ module.exports = async function handler(req, res) {
   const affiliation = clean(body.affiliation, 180);
   const position = clean(body.position, 120);
     const dietary = clean(body.dietary, 80);
-  const events = Array.isArray(body.events) ? body.events.map((v) => clean(v, 40)).filter(Boolean).slice(0, 4) : [];
   const comments = clean(body.comments, 1200);
   const attendance = Array.isArray(body.attendance)
     ? body.attendance.map((v) => clean(v, 32)).filter(Boolean).slice(0, 5)
@@ -88,7 +87,6 @@ module.exports = async function handler(req, res) {
     position,
     attendance,
     dietary,
-    events,
     comments
   };
 
