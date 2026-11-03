@@ -155,3 +155,15 @@ img{max-width:100%;display:block}
   .checkbox-grid{grid-template-columns:1fr}
   .radio-row{flex-direction:column;gap:10px}
 }
+
+.participants-main{max-width:980px}
+.participant-list{border-top:1px solid var(--line)}
+.participant-row{display:grid;grid-template-columns:minmax(240px,1fr) 1.65fr;gap:28px;padding:19px 0;border-bottom:1px solid var(--line);align-items:baseline}
+.participant-name{font-size:22px;color:var(--navy)}
+.participant-affiliation{font-family:system-ui,-apple-system,"Segoe UI",Arial,sans-serif;font-size:16px;color:#526b83}
+.participants-status{font-family:system-ui,-apple-system,"Segoe UI",Arial,sans-serif;font-size:14px;color:#697684;padding:18px 0;border-top:1px solid var(--line)}
+@media(max-width:760px){
+  .participant-row{grid-template-columns:1fr;gap:3px;padding:16px 0}
+  .participant-name{font-size:20px}
+  .participant-affiliation{font-size:15px}
+}
