@@ -9,10 +9,42 @@ function doPost(e) {
       return jsonResponse_({ ok: false, error: "unauthorized" });
     }
 
-    lock.waitLock(10000);
-
     const spreadsheet = SpreadsheetApp.getActiveSpreadsheet();
     let sheet = spreadsheet.getSheetByName("Registrations");
+
+    if (data.action === "listParticipants") {
+      if (!sheet || sheet.getLastRow() < 2) {
+        return jsonResponse_({ ok: true, participants: [] });
+      }
+
+      const values = sheet.getDataRange().getDisplayValues();
+      const headers = values[0];
+      const nameIndex = headers.indexOf("Name");
+      const affiliationIndex = headers.indexOf("Affiliation");
+
+      if (nameIndex < 0 || affiliationIndex < 0) {
+        return jsonResponse_({ ok: false, error: "missing_columns" });
+      }
+
+      const seen = {};
+      const participants = [];
+
+      for (let i = 1; i < values.length; i++) {
+        const name = String(values[i][nameIndex] || "").trim();
+        const affiliation = String(values[i][affiliationIndex] || "").trim();
+        if (!name || !affiliation) continue;
+
+        const key = (name + "\n" + affiliation).toLowerCase();
+        if (seen[key]) continue;
+        seen[key] = true;
+        participants.push({ name: name, affiliation: affiliation });
+      }
+
+      return jsonResponse_({ ok: true, participants: participants });
+    }
+
+    lock.waitLock(10000);
+
     if (!sheet) {
       sheet = spreadsheet.insertSheet("Registrations");
     }
