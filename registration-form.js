@@ -36,9 +36,7 @@
       affiliation: formData.get("affiliation"),
       position: formData.get("position"),
       attendance,
-      dietary: formData.get("dietary"),
-      events: [...form.querySelectorAll('input[name="events"]:checked')].map((input) => input.value),
-      comments: formData.get("comments"),
+      dietary: formData.get("dietary"),      comments: formData.get("comments"),
       website: formData.get("website")
     };
 
