@@ -116,3 +116,42 @@ img{max-width:100%;display:block}
   .support-item.nrf>img{width:62px;max-width:62px}
   .sponsor-note{font-size:10.5px;padding-left:14px}
 }
+.registration-main{max-width:980px}
+.registration-heading{max-width:820px}
+.registration-form-wrap{max-width:880px;margin-top:32px}
+.registration-form{background:#fff;border:1px solid var(--line);box-shadow:var(--shadow);padding:40px 42px}
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px 28px}
+.form-field{display:flex;flex-direction:column;gap:8px;font-family:system-ui,-apple-system,"Segoe UI",Arial,sans-serif;font-size:14px;color:#314d69}
+.form-field>span,.form-section legend{font-weight:600;color:var(--navy)}
+.form-field em,.form-section em{font-style:normal;color:#a36c1c}
+.form-field input,.form-field textarea{width:100%;box-sizing:border-box;border:1px solid #cbd3dc;background:#fff;color:#182b42;border-radius:2px;padding:12px 13px;font:inherit;line-height:1.4;transition:border-color .15s,box-shadow .15s}
+.form-field input:focus,.form-field textarea:focus{outline:none;border-color:#315e91;box-shadow:0 0 0 3px rgba(49,94,145,.11)}
+.form-field textarea{resize:vertical;min-height:112px}
+.form-field-full{margin-top:28px}
+.form-section{border:0;border-top:1px solid var(--line);padding:26px 0 0;margin:30px 0 0;font-family:system-ui,-apple-system,"Segoe UI",Arial,sans-serif}
+.form-section legend{padding:0 12px 0 0;font-size:14px}
+.field-help{font-size:13px;color:#697684;margin:2px 0 14px}
+.checkbox-grid{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:8px}
+.checkbox-grid label,.radio-row label{display:flex;gap:8px;align-items:center;font-size:13px;color:#344d66;cursor:pointer}
+.checkbox-grid input,.radio-row input{accent-color:#0b2a55}
+.radio-row{display:flex;gap:28px}
+.honeypot{position:absolute!important;left:-9999px!important;width:1px!important;height:1px!important;overflow:hidden!important}
+.form-actions{margin-top:28px}
+.registration-submit{appearance:none;border:0;background:var(--navy);color:#fff;padding:13px 22px;font-family:system-ui,-apple-system,"Segoe UI",Arial,sans-serif;font-size:14px;font-weight:600;letter-spacing:.01em;cursor:pointer;border-radius:2px}
+.registration-submit:hover{background:#143c6f}
+.registration-submit:disabled{opacity:.52;cursor:not-allowed}
+.registration-message{min-height:22px;margin-top:18px;font-family:system-ui,-apple-system,"Segoe UI",Arial,sans-serif;font-size:13px}
+.registration-message.is-error{color:#9c2f2f}
+.registration-message.is-info{color:#5d6e80}
+.registration-success{background:#fff;border:1px solid var(--line);box-shadow:var(--shadow);padding:44px 42px}
+.registration-success h2{font-size:35px;font-weight:400;color:var(--navy);margin:4px 0 10px}
+.registration-success p{color:#52677c}
+@media(max-width:760px){
+  .registration-form{padding:28px 22px}
+  .form-grid{grid-template-columns:1fr;gap:20px}
+  .checkbox-grid{grid-template-columns:1fr 1fr}
+}
+@media(max-width:460px){
+  .checkbox-grid{grid-template-columns:1fr}
+  .radio-row{flex-direction:column;gap:10px}
+}
