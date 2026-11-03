@@ -3,6 +3,9 @@
   "functions": {
     "api/register.js": {
       "maxDuration": 10
+    },
+    "api/participants.js": {
+      "maxDuration": 10
     }
   }
 }
