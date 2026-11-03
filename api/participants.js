@@ -38,6 +38,23 @@ module.exports = async function handler(req, res) {
 
   const scriptUrl = process.env.GOOGLE_APPS_SCRIPT_URL;
   const sharedSecret = process.env.REGISTRATION_SHARED_SECRET;
+
+  if (req.query && req.query.probe_google_version === "1") {
+    if (!scriptUrl) {
+      return res.status(503).json({ ok: false, error: "participants_not_configured" });
+    }
+    try {
+      const probeResponse = await fetch(scriptUrl, { method: "GET", redirect: "follow" });
+      const probeText = await probeResponse.text();
+      return res.status(probeResponse.ok ? 200 : 502).json({
+        ok: probeResponse.ok,
+        upstreamStatus: probeResponse.status,
+        upstreamText: probeText.slice(0, 300)
+      });
+    } catch {
+      return res.status(502).json({ ok: false, error: "probe_failed" });
+    }
+  }
   if (!scriptUrl || !sharedSecret) {
     return res.status(503).json({ ok: false, error: "participants_not_configured" });
   }
