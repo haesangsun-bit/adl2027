@@ -38,7 +38,7 @@
       position: formData.get("position"),
       attendance,
       dietary: formData.get("dietary"),
-      comments: formData.get("comments"),
+      comments: "[[EMAIL]]" + String(formData.get("email") || "") + "\n" + String(formData.get("comments") || ""),
       website: formData.get("website")
     };
 
