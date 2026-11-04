@@ -20,7 +20,9 @@ function setCors(req, res) {
   res.setHeader("Vary", "Origin");
   res.setHeader("Access-Control-Allow-Methods", "GET, OPTIONS");
   res.setHeader("Access-Control-Allow-Headers", "Content-Type, Accept");
-  res.setHeader("Cache-Control", "public, max-age=60, s-maxage=300");
+  res.setHeader("Cache-Control", "public, max-age=60");
+  res.setHeader("CDN-Cache-Control", "public, s-maxage=300, stale-while-revalidate=86400");
+  res.setHeader("Vercel-CDN-Cache-Control", "public, s-maxage=300, stale-while-revalidate=86400, stale-if-error=86400");
 }
 
 module.exports = async function handler(req, res) {
