@@ -33,6 +33,7 @@
     const formData = new FormData(form);
     const payload = {
       name: formData.get("name"),
+      email: formData.get("email"),
       affiliation: formData.get("affiliation"),
       position: formData.get("position"),
       attendance,
