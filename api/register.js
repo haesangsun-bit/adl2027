@@ -67,6 +67,7 @@ module.exports = async function handler(req, res) {
   }
 
   const name = clean(body.name, 120);
+  const email = clean(body.email, 254);
   const affiliation = clean(body.affiliation, 180);
   const position = clean(body.position, 120);
   const dietary = clean(body.dietary, 80);
@@ -75,7 +76,9 @@ module.exports = async function handler(req, res) {
     ? body.attendance.map((v) => clean(v, 32)).filter(Boolean).slice(0, 5)
     : [];
 
-  if (!name || !affiliation || !position || !attendance.length || !dietary) {
+  const emailIsValid = email.includes("@") && email.indexOf("@") > 0 && email.lastIndexOf(".") > email.indexOf("@") + 1;
+
+  if (!name || !emailIsValid || !affiliation || !position || !attendance.length || !dietary) {
     return res.status(400).json({ ok: false, error: "missing_or_invalid_fields" });
   }
 
@@ -83,6 +86,7 @@ module.exports = async function handler(req, res) {
     secret: sharedSecret,
     submittedAt: new Date().toISOString(),
     name,
+    email,
     affiliation,
     position,
     attendance,
