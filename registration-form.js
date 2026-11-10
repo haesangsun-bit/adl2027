@@ -55,9 +55,10 @@
 
     const formData = new FormData(form);
     const banquet = String(formData.get("banquet") || "");
+    const dietaryChoice = String(formData.get("dietary") || "");
     const dietary = banquet === "Yes"
-      ? String(formData.get("dietary") || "")
-      : "Not applicable";
+      ? "Banquet: Yes — " + dietaryChoice
+      : "Banquet: No";
 
     const payload = {
       name: formData.get("name"),
@@ -68,7 +69,6 @@
       dietary,
       comments:
         "[[EMAIL]]" + String(formData.get("email") || "") + "\n" +
-        "[[BANQUET]]" + banquet + "\n" +
         String(formData.get("comments") || ""),
       website: formData.get("website")
     };
