@@ -46,13 +46,26 @@
       </fieldset>
 
       <fieldset class="form-section">
-        <legend>Dietary requirements <em>*</em></legend>
-        <p class="field-help">Please select the option that best applies.</p>
-        <div class="radio-row dietary-row">
-          <label><input type="radio" name="dietary" value="No restrictions" required> <span>No restrictions</span></label>
-          <label><input type="radio" name="dietary" value="Vegetarian" required> <span>Vegetarian</span></label>
-          <label><input type="radio" name="dietary" value="Vegan" required> <span>Vegan</span></label>
-          <label><input type="radio" name="dietary" value="Other" required> <span>Other</span></label>
+        <legend>Banquet &amp; dietary requirements <em>*</em></legend>
+        <p class="field-help">The conference banquet is scheduled for Tuesday, January 26 at 18:30.</p>
+
+        <div class="form-subgroup">
+          <div class="form-subgroup-title">Will you attend the banquet? <em>*</em></div>
+          <div class="radio-row banquet-row">
+            <label><input type="radio" name="banquet" value="Yes" required> <span>Yes</span></label>
+            <label><input type="radio" name="banquet" value="No" required> <span>No</span></label>
+          </div>
+        </div>
+
+        <div id="dietary-group" class="form-subgroup dietary-group is-disabled">
+          <div class="form-subgroup-title">Dietary requirements</div>
+          <p class="field-help">If you will attend the banquet, please select the option that best applies.</p>
+          <div class="radio-row dietary-row">
+            <label><input type="radio" name="dietary" value="No restrictions" disabled> <span>No restrictions</span></label>
+            <label><input type="radio" name="dietary" value="Vegetarian" disabled> <span>Vegetarian</span></label>
+            <label><input type="radio" name="dietary" value="Vegan" disabled> <span>Vegan</span></label>
+            <label><input type="radio" name="dietary" value="Other" disabled> <span>Other</span></label>
+          </div>
         </div>
       </fieldset>
 
