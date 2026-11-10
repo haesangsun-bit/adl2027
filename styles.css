@@ -167,3 +167,10 @@ img{max-width:100%;display:block}
   .participant-name{font-size:20px}
   .participant-affiliation{font-size:15px}
 }
+
+.form-subgroup{margin-top:18px}
+.form-subgroup+.form-subgroup{margin-top:22px;padding-top:18px;border-top:1px solid rgba(11,42,85,.08)}
+.form-subgroup-title{font-family:system-ui,-apple-system,"Segoe UI",Arial,sans-serif;font-size:14px;font-weight:600;color:var(--navy);margin-bottom:10px}
+.form-subgroup-title em{font-style:normal;color:#a36c1c}
+.dietary-group{transition:opacity .15s ease}
+.dietary-group.is-disabled{opacity:.5}
