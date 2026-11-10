@@ -6,6 +6,29 @@
   const submit = document.getElementById("registration-submit");
   const message = document.getElementById("registration-message");
   const success = document.getElementById("registration-success");
+  const dietaryGroup = document.getElementById("dietary-group");
+  const banquetInputs = [...form.querySelectorAll('input[name="banquet"]')];
+  const dietaryInputs = [...form.querySelectorAll('input[name="dietary"]')];
+
+  const syncDietaryState = () => {
+    const banquet = form.querySelector('input[name="banquet"]:checked')?.value || "";
+    const attendsBanquet = banquet === "Yes";
+
+    dietaryInputs.forEach((input) => {
+      input.disabled = !attendsBanquet;
+      input.required = attendsBanquet;
+      if (!attendsBanquet) input.checked = false;
+    });
+
+    if (dietaryGroup) {
+      dietaryGroup.classList.toggle("is-disabled", !attendsBanquet);
+    }
+  };
+
+  banquetInputs.forEach((input) => {
+    input.addEventListener("change", syncDietaryState);
+  });
+  syncDietaryState();
 
   if (!endpoint) {
     submit.disabled = true;
@@ -31,14 +54,22 @@
     }
 
     const formData = new FormData(form);
+    const banquet = String(formData.get("banquet") || "");
+    const dietary = banquet === "Yes"
+      ? String(formData.get("dietary") || "")
+      : "Not applicable";
+
     const payload = {
       name: formData.get("name"),
       email: formData.get("email"),
       affiliation: formData.get("affiliation"),
       position: formData.get("position"),
       attendance,
-      dietary: formData.get("dietary"),
-      comments: "[[EMAIL]]" + String(formData.get("email") || "") + "\n" + String(formData.get("comments") || ""),
+      dietary,
+      comments:
+        "[[EMAIL]]" + String(formData.get("email") || "") + "\n" +
+        "[[BANQUET]]" + banquet + "\n" +
+        String(formData.get("comments") || ""),
       website: formData.get("website")
     };
 
